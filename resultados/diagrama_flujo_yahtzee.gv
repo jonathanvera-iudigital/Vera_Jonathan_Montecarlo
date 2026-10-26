@@ -1,0 +1,33 @@
+// Algoritmo Yahtzee Montecarlo
+digraph {
+	dpi=200 rankdir=TB size="8,10"
+	node [color=black fillcolor="#E3F2FD" fontname=Arial fontsize=10 shape=box style="filled,rounded"]
+	inicio [label="Inicio de Turno
+(Tirada Inicial: 5 Dados, tirada = 1)" fillcolor="#C8E6C9" shape=ellipse]
+	eval_tiros [label="¿tirada < 3?" fillcolor="#FFF9C4" shape=diamond]
+	eval_mascaras [label="Evaluar las 32 Máscaras
+Posibles de Bloqueo (Keep Masks)" fillcolor="#E1BEE7"]
+	montecarlo [label="Para cada máscara:
+simular N relanzamientos de los dados libres
+y promediar el mejor puntaje (EV)" fillcolor="#BBDEFB"]
+	mejor_mascara [label="Seleccionar máscara con máximo EV
+(empate: conservar más dados)" fillcolor="#BBDEFB"]
+	plantarse [label="¿La mejor máscara es
+mantener todos los dados?" fillcolor="#FFF9C4" shape=diamond]
+	actualizar_dados [label="Lanzar solo los dados no bloqueados
+tirada = tirada + 1
+(estadística: solo dados lanzados)" fillcolor="#FFE0B2"]
+	anotar [label="Anotar en la mejor categoría
+disponible en la hoja" fillcolor="#F8BBD0"]
+	fin [label="Fin del Turno" fillcolor="#FFCDD2" shape=ellipse]
+	inicio -> eval_tiros
+	eval_tiros -> eval_mascaras [label="Sí"]
+	eval_tiros -> anotar [label=No]
+	eval_mascaras -> montecarlo
+	montecarlo -> mejor_mascara
+	mejor_mascara -> plantarse
+	plantarse -> anotar [label="Sí"]
+	plantarse -> actualizar_dados [label=No]
+	actualizar_dados -> eval_tiros
+	anotar -> fin
+}

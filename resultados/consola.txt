@@ -1,0 +1,40 @@
+
+⏳ Ejecutando 3 partidas para SIMS_PER_MASK = 10...
+
+⏳ Ejecutando 3 partidas para SIMS_PER_MASK = 100...
+
+⏳ Ejecutando 3 partidas para SIMS_PER_MASK = 1000...
+
+=== TABLA COMPARATIVA DE ESCENARIOS ===
+ Sims por Máscara  Tiempo por partida (s)  Puntaje medio por jugador  Yahtzees por turno
+               10                   0.037                      187.3              0.0000
+              100                   0.284                      205.3              0.0000
+             1000                   2.754                      201.2              0.0128
+Exp 1 (dados): pendiente log-log del error = -0.517
+Exp 2 (probabilidades exactas): {'yahtzee': 0.04603, 'largeStraight': 0.00016, 'smallStraight': 0.02482, 'fullHouse': 0.09882}
+       pendientes log-log: {'yahtzee': -0.498, 'largeStraight': None, 'smallStraight': -0.538, 'fullHouse': -0.436}
+
+⏳ Iniciando experimento de convergencia...
+   Iteraciones:     10 | EV medio: 17.2040 | error medio: 0.9911 | 0.0000s
+   Iteraciones:     30 | EV medio: 17.2995 | error medio: 0.5075 | 0.0001s
+   Iteraciones:    100 | EV medio: 17.3379 | error medio: 0.3001 | 0.0002s
+   Iteraciones:    300 | EV medio: 17.3032 | error medio: 0.1733 | 0.0006s
+   Iteraciones:   1000 | EV medio: 17.2994 | error medio: 0.0932 | 0.0018s
+   Iteraciones:   3000 | EV medio: 17.3029 | error medio: 0.0564 | 0.0055s
+   Iteraciones:  10000 | EV medio: 17.3051 | error medio: 0.0310 | 0.0181s
+   Iteraciones: 100000 | EV medio: 17.2973 | error medio: 0.0085 | 0.1783s
+Exp 3: EV exacto = 17.3009; pendiente log-log del error = -0.506
+ sims_per_mask  arrepentimiento_medio  porcentaje_decision_optima  segundos_por_decision
+             1               3.726511                   20.000000               0.000121
+             3               2.081925                   30.000000               0.000240
+            10               0.856346                   50.000000               0.000644
+            30               0.557800                   53.333333               0.001743
+           100               0.273277                   75.000000               0.005531
+           300               0.074601                   86.666667               0.016194
+          1000               0.040619                   88.333333               0.053676
+          3000               0.007485                   95.000000               0.162463
+Exp 4: {'etiqueta': 'mc_vs_mc', 'partidas': 1000, 'segundos': 87.4, 'victorias_j1': 492, 'victorias_j2': 499, 'empates': 9, 'media_j1': 201.06, 'media_j2': 202.42, 'yahtzee_por_turno': 0.0178}
+Exp 4: {'etiqueta': 'ingenua_vs_ingenua', 'partidas': 100000, 'segundos': 54.5, 'victorias_j1': 49443, 'victorias_j2': 49771, 'empates': 786, 'media_j1': 144.67, 'media_j2': 144.78, 'yahtzee_por_turno': 0.046}
+Exp 4: {'etiqueta': 'mc_vs_ingenua', 'partidas': 1000, 'segundos': 43.1, 'victorias_j1': 863, 'victorias_j2': 135, 'empates': 2, 'media_j1': 200.86, 'media_j2': 144.18, 'yahtzee_por_turno': 0.0343}
+No se pudo generar el PNG (ExecutableNotFound); instala Graphviz (sudo apt-get install graphviz). Se guardó resultados\diagrama_flujo_yahtzee.gv
+finished
